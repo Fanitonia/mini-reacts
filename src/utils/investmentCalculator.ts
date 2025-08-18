@@ -1,36 +1,40 @@
 import type { InputValues } from "../types/InputValues";
 import type { Investment } from "../types/Investment";
 
-export default function CalculateInvestment(values: InputValues): Investment[] {
+export default function calculateInvestment(inputs: InputValues): Investment[] {
 
-    const allNotZero = Object.values(values).every(value => value !== 0);
-    
-    if(!allNotZero)
+    const allInputsProvided = Object.values(inputs).every(value => value !== 0);
+
+    if (!allInputsProvided)
         return [];
 
-    let InvestmentsResults: Investment[] = [];
+    let investmentsResults: Investment[] = [];
 
     let invest: Investment = {
         year: 1,
-        totalValue: values.initialInvestment,
+        totalValue: inputs.initialInvestment,
         yearlyInterest: 0,
-        totalInterest: 0,   
-        investedCapital: values.initialInvestment
+        totalInterest: 0,
+        investedCapital: inputs.initialInvestment
     };
 
-
-    for(let year = 1; year <= values.duration; year++) {
+    for (let year = 1; year <= inputs.duration; year++) {
         invest.year = year;
-        invest.yearlyInterest = invest.totalValue * (values.expectedReturn / 100);
+        invest.yearlyInterest = invest.totalValue * (inputs.expectedReturn / 100);
         invest.totalInterest += invest.yearlyInterest;
-        invest.investedCapital += values.annualInvestment;
-        invest.totalValue += invest.yearlyInterest + values.annualInvestment;
+        invest.investedCapital += inputs.annualInvestment;
+        invest.totalValue += invest.yearlyInterest + inputs.annualInvestment;
 
-        const newInvest = {...invest};
-        InvestmentsResults.push(newInvest);
+        const newInvest = { ...invest };
+        investmentsResults.push(newInvest);
     }
 
-    return InvestmentsResults;
-
-
+    return investmentsResults;
 }
+
+export const formatter = Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+});

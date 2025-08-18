@@ -70,6 +70,12 @@ input {
   height: 100%;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 #results {
   display: flex;
   flex-direction: column;
@@ -90,5 +96,9 @@ input {
 
 #results td {
   text-align: center;
+}
+
+#results p {
+  padding: 20px 0px;
 }
 
