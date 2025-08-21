@@ -13,10 +13,10 @@ export default function Results({userInput}: { userInput: InputValues })
                     <thead>
                         <tr>
                         <th>Year</th>
-                        <th>Investment Value</th>
-                        <th>Interest (Year)</th>
+                        <th>Ending Balance</th>
+                        <th>Interest</th>
                         <th>Total Interest</th>
-                        <th>Total Capital</th>
+                        <th>Total Deposit</th>
                     </tr>
                     </thead>
                     <tbody>

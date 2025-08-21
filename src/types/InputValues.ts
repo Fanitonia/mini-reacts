@@ -1,6 +1,6 @@
 export type InputValues = {
-  initialInvestment: number;
-  annualInvestment: number;
+  startingAmount: number;
+  contribution: number;
   expectedReturn: number;
   duration: number;
 };

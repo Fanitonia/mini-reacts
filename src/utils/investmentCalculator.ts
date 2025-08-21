@@ -1,35 +1,35 @@
 import type { InputValues } from "../types/InputValues";
-import type { Investment } from "../types/Investment";
+import type { InvestmentData } from "../types/InvestmentData";
 
-export default function calculateInvestment(inputs: InputValues): Investment[] {
+export default function calculateInvestment(inputs: InputValues): InvestmentData[] {
 
     const allInputsProvided = Object.values(inputs).every(value => value !== 0);
 
     if (!allInputsProvided)
         return [];
 
-    let investmentsResults: Investment[] = [];
+    let annualDatas: InvestmentData[] = [];
 
-    let invest: Investment = {
+    let annualData: InvestmentData = {
         year: 1,
-        totalValue: inputs.initialInvestment,
+        totalValue: inputs.startingAmount,
         yearlyInterest: 0,
         totalInterest: 0,
-        investedCapital: inputs.initialInvestment
+        investedCapital: inputs.startingAmount
     };
 
     for (let year = 1; year <= inputs.duration; year++) {
-        invest.year = year;
-        invest.yearlyInterest = invest.totalValue * (inputs.expectedReturn / 100);
-        invest.totalInterest += invest.yearlyInterest;
-        invest.investedCapital += inputs.annualInvestment;
-        invest.totalValue += invest.yearlyInterest + inputs.annualInvestment;
+        annualData.year = year;
+        annualData.yearlyInterest = annualData.totalValue * (inputs.expectedReturn / 100);
+        annualData.totalInterest += annualData.yearlyInterest;
+        annualData.investedCapital += inputs.contribution;
+        annualData.totalValue += annualData.yearlyInterest + inputs.contribution;
 
-        const newInvest = { ...invest };
-        investmentsResults.push(newInvest);
+        const newAnnualData = { ...annualData };
+        annualDatas.push(newAnnualData);
     }
 
-    return investmentsResults;
+    return annualDatas;
 }
 
 export const formatter = Intl.NumberFormat("en-US", {

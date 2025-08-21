@@ -7,8 +7,8 @@ import Inputs from "./components/Inputs"
 import Results from "./components/Results"
 
 const inputs: InputValues = {
-  initialInvestment: 0,
-  annualInvestment: 0,
+  startingAmount: 0,
+  contribution: 0,
   expectedReturn: 0,
   duration: 0,
 }

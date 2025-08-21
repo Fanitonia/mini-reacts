@@ -1,4 +1,4 @@
-export type Investment = {
+export type InvestmentData = {
     year: number;
     totalValue: number;
     yearlyInterest: number;

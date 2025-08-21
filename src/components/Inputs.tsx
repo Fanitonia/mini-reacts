@@ -14,15 +14,19 @@ export default function Inputs({ setInputValues }: { setInputValues: React.Dispa
     return (
         <section id="inputs">
             <div>
-                <Input label="Initial Investment" id="initialInvestment"
-                    onChange={(e) => handleInputChange("initialInvestment", e.target.value )} />
+                <Input label="Starting Amount" id="startingAmount"
+                    spanValue="USD"
+                    onChange={(e) => handleInputChange("startingAmount", e.target.value )} />
                 <Input label="Expected Return" id="expectedReturn"
+                    spanValue="%"
                     onChange={(e) => handleInputChange("expectedReturn", e.target.value)} />
             </div>
             <div>
-                <Input label="Annual Investment" id="annualInvestment"
-                    onChange={(e) => handleInputChange("annualInvestment", e.target.value)} />
+                <Input label="Contribution (yearly)" id="contribution"
+                    spanValue="USD"
+                    onChange={(e) => handleInputChange("contribution", e.target.value)} />
                 <Input label="Duration" id="duration"
+                    spanValue="years"
                     onChange={(e) => handleInputChange("duration", e.target.value)} />
             </div>
         </section>
