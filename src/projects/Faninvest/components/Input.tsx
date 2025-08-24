@@ -1,3 +1,5 @@
+import styles from "./Input.module.scss"
+
 type InputProps = {
     label: string;
     id: string;
@@ -7,11 +9,11 @@ type InputProps = {
 
 export default function Input({label, id, spanValue, onChange}: InputProps) {
     return (
-        <div>
+        <div className={styles["input-container"]}>
             <label htmlFor={id}>{label}</label>
-            <div className="input">
-                <input type="number" id={id} defaultValue={0} onChange={onChange}/>
-                <span className="input-span">{spanValue}</span>
+            <div>
+                <input className={styles.input} type="number" id={id} defaultValue={0} onChange={onChange}/>
+                <span>{spanValue}</span>
             </div>
             
         </div>

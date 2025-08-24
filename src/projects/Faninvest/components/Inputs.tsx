@@ -1,3 +1,4 @@
+import styles from "./Inputs.module.scss"
 import Input from "./Input";
 import type { InputValues } from "../types/InputValues";
 
@@ -12,7 +13,7 @@ export default function Inputs({ setInputValues }: { setInputValues: React.Dispa
     }
 
     return (
-        <section id="inputs">
+        <section className={styles.inputs}>
             <div>
                 <Input label="Starting Amount" id="startingAmount"
                     spanValue="USD"

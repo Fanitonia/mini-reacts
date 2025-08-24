@@ -1,0 +1,52 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px ;
+    height: 100%;
+    min-height: 400px;
+    padding: 30px 25px;
+    background-color: rgb(27, 27, 27);
+
+    >h1 {
+        color: rgb(255, 255, 255, 0.7);
+        text-align: center;
+    }
+
+    >button {
+        cursor: pointer;
+        background-color: rgb(56, 56, 56);
+        color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8); ;
+            background-color: rgb(70, 70, 70);
+            transition: ease-in-out all 0.2s;
+        }
+    }
+    
+    >ol {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        >button {
+            cursor: pointer;
+            list-style: none;
+            background-color: rgb(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.6);
+            border: none;
+            padding: 5px 6px;
+            text-align: start;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.8); ;
+                background-color: rgb(70, 70, 70);
+                transition: ease-in-out all 0.2s;
+            }
+        }
+    }
+
+}

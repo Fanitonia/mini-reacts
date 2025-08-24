@@ -1,3 +1,4 @@
+import styles from "./Results.module.scss"
 import type { InputValues } from "../types/InputValues";
 import calculateInvestment, { formatter } from "../utils/investmentCalculator";
 
@@ -7,7 +8,7 @@ export default function Results({userInput}: { userInput: InputValues })
     const hasResults = investmentResults.length > 0;
 
     return(
-        <section id="results">
+        <section className={styles.results}>
             {hasResults ? 
                 <table>
                     <thead>

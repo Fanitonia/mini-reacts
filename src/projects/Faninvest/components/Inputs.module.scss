@@ -1,0 +1,19 @@
+.inputs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 4rem;
+  background: radial-gradient(circle, rgb(35, 35, 35), rgb(32, 32, 32));
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 15px;
+  box-shadow: 3px 3px 12px rgba(14, 14, 14, 0.3);
+
+  >div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+    height: 100%;
+  }
+}

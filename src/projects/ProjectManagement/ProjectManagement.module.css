@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(37, 37, 37);
+
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    min-height: max-content;
+}
+

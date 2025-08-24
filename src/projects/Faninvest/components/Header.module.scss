@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 3rem;
+  margin-top: 15%;
+
+  >h1 {
+    font-size: 3rem;
+    color: rgb(230, 230, 230);
+    
+    margin-top: 1rem;
+    text-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
+  }
+}
