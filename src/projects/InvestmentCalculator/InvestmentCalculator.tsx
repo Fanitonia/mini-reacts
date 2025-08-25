@@ -1,4 +1,4 @@
-import styles from "./Faninvest.module.scss"
+import styles from "./InvestmentCalculator.module.scss"
 import {useState} from "react"
 
 import type {InputValues} from "./types/InputValues"
@@ -15,21 +15,19 @@ const inputs: InputValues = {
   duration: 0,
 }
 
-function Faninvest() {
+function InvestmentCalculator() {
   const [userInput, setUserInput] = useState<InputValues>(inputs);
 
   return (
     <>
       <div className={styles.container}>
         <Background></Background>
-        <div>
-          <Header></Header>
-          <Inputs setInputValues={setUserInput} />
-          <Results userInput={userInput} />
-        </div>
+        <Header></Header>
+        <Inputs setInputValues={setUserInput} />
+        <Results userInput={userInput} />
       </div>
     </>
   )
 }
 
-export default Faninvest
+export default InvestmentCalculator

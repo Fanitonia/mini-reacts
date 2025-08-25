@@ -1,0 +1,28 @@
+@mixin flex($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin flex-justify($direction: row, $gap: 0) {
+    display: flex;
+    justify-content: center;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin flex-align($direction: row, $gap: 0) {
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+    gap: $gap;
+}
+

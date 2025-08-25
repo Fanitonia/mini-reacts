@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./ProjectManagement.module.css";
+import styles from "./ProjectManagement.module.scss";
 import type { ProjectData } from "./types/ProjectData"
 
 import ProjectsSideBar from "./components/Sidebar/ProjectsSidebar";

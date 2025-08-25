@@ -15,7 +15,6 @@ export default function Input({label, id, spanValue, onChange}: InputProps) {
                 <input className={styles.input} type="number" id={id} defaultValue={0} onChange={onChange}/>
                 <span>{spanValue}</span>
             </div>
-            
         </div>
     );
  }

@@ -1,8 +1,8 @@
+@use "../../../../../base.scss";
+
 .project-container {
-    display: flex;
-    flex-direction: column;
+    @include base.flex(column, 5px);
     justify-content: flex-start;
-    gap: 5px;
     height: 100%;
     color: rgb(255, 255, 255);
     padding: min(25px, 8%);
@@ -30,9 +30,7 @@
     }
 
     >ol {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        @include base.flex(column, 10px);
         margin: 16px 0;
 
         >div {

@@ -1,7 +1,7 @@
+@use "../../../../base.scss";
+
 .sidebar-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px ;
+    @include base.flex(column, 20px);
     height: 100%;
     min-height: 400px;
     padding: 30px 25px;
@@ -28,9 +28,7 @@
     }
     
     >ol {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        @include base.flex(column, 10px);
 
         >button {
             cursor: pointer;

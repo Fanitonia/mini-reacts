@@ -1,4 +1,4 @@
-@use "../../../css/base.scss";
+@use "../../../../../base.scss";
 
 .noproject-container {
     @include base.flex-center($direction: column, $gap: 20px);
