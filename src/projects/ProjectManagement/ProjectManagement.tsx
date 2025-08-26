@@ -4,8 +4,9 @@ import type { ProjectData } from "./types/ProjectData"
 
 import ProjectsSideBar from "./components/Sidebar/ProjectsSidebar";
 import ProjectView from "./components/ProjectView/ProjectView";
+import NewProject from "./components/NewProject/NewProject";
 
-const projects: ProjectData[] = [
+const projectsData: ProjectData[] = [
   {
     title: "React Project Management",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ipsum sapien. Vestibulum eget accumsan quam. Nam vehicula lectus mauris, ac sagittis ipsum molestie eget.",
@@ -35,14 +36,16 @@ const projects: ProjectData[] = [
 ]
 
 function ProjectManagement() {
+  const [projects, setProjects] = useState<ProjectData[]>(projectsData);
   const [selectedProject, setSelectedProject] = useState<ProjectData | undefined>(undefined);
 
   return (
-    <div className={styles["main-container"]}>
-      <div className={styles["container"]}>
-        <ProjectsSideBar projects={projects} setProject={setSelectedProject}></ProjectsSideBar>
-        <ProjectView project={selectedProject}></ProjectView>
-      </div>
+    <div className={styles["global-container"]}>
+      <main>
+        <ProjectsSideBar projects={projects} setSelectedProject={setSelectedProject}></ProjectsSideBar>
+        {/* <ProjectView setProjects = {setProjects}project={selectedProject}></ProjectView> */}
+        <NewProject />
+      </main>
     </div>
   )
 }

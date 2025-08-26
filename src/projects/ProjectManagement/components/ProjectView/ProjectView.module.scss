@@ -1,6 +1,7 @@
+@use "../../../../base.scss";
+
 .project-view-container {
-    background-color: rgb(32, 32, 32);
-    height: 100%;
-    min-height: 400px;
-    width: 700px;
+    background-color: rgb(243, 237, 226);
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
 }

@@ -3,22 +3,22 @@ import type { ProjectData } from "../../types/ProjectData"
 
 type SideBarProps = {
     projects: ProjectData[];
-    setProject: React.Dispatch<React.SetStateAction<ProjectData | undefined>>;
+    setSelectedProject: React.Dispatch<React.SetStateAction<ProjectData | undefined>>;
 }
 
-export default function ProjectsSideBar({projects, setProject}: SideBarProps) {
+export default function ProjectsSideBar({projects, setSelectedProject}: SideBarProps) {
     function handleClick(project: ProjectData) {
-        setProject(project)
+        setSelectedProject(project)
     }
     return (
-        <section className={styles["sidebar-container"]}>
-            <h1>Your Projects</h1>
+        <aside className={styles["aside-container"]}>
+            <h2>Your Projects</h2>
             <button>Create Project</button>
-            <ol>
+            <ul>
                 {projects.map((project, index) => (
                     <button onClick={() => handleClick(project)} key={index}>{project.title}</button>
                 ))}
-            </ol>
-        </section>
+            </ul>
+        </aside>
     )
 }

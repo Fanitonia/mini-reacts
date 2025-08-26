@@ -2,11 +2,11 @@ import type { ProjectData } from "../../../types/ProjectData"
 import styles from "./Project.module.scss";
 
 type ProjectProps = {
-    project?: ProjectData;
+    project?: ProjectData
+    setProjects: React.Dispatch<React.SetStateAction<ProjectData[]>>
 }
 
-export default function Project({project}: ProjectProps) {
-
+export default function Project({project, setProjects}: ProjectProps) {
     const date = project?.dueDate;
     const formattedDate = date?.toDateString();
     return (
@@ -20,7 +20,7 @@ export default function Project({project}: ProjectProps) {
                 {project!.tasks?.map((task, index) => (
                     <div key={index}>
                         <li >{task.text}</li>
-                        <button>Clear</button>
+                        <button >Clear</button>
                     </div>
                     
                 ))}

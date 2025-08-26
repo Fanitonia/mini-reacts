@@ -1,0 +1,39 @@
+@use "../../../../base.scss";
+
+.new-project-container {
+    width: 40rem;
+    margin-top: 2rem;
+
+    >menu {
+        @include base.flex-align($gap: 0.6rem);
+        justify-content: flex-end;
+        margin: 0.5rem 0;
+        list-style: none;
+
+        button {
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            border: none;
+        }
+
+        .cancel-button {
+            background-color: transparent;
+            color: rgb(160, 160, 160);
+            &:hover {
+                color: rgb(211, 211, 211);
+            }
+        }
+
+        .save-button {
+            background-color: rgb(36, 34, 34);
+            color: rgb(240, 240, 240);
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            &:hover {
+                background-color: rgb(31, 29, 29);
+                color: white;
+            }
+
+        }
+    }
+}

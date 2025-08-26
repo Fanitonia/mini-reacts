@@ -1,0 +1,31 @@
+@use "../../../../base.scss";
+
+.input-container {
+    @include base.flex(column, 0.3rem);
+    margin-bottom: 1rem;
+
+    >label {
+        font-size: 0.875rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgb(241, 241, 241);
+    }
+
+    .input-box {
+        font-family: "Inter", sans-serif;
+        border: 1px solid rgba(255, 255, 255, 0);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 0.25rem;
+        background-color: rgb(51, 51, 51);
+        color: rgba(236, 236, 236, 0.993);
+        padding: 0.5rem;
+        width: 100%;
+        color-scheme: dark;
+        
+        &:focus {
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+        }
+    }
+}

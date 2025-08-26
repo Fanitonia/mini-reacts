@@ -5,15 +5,16 @@ import Project from "./Project/Project"
 
 type ViewProps = {
     project?: ProjectData;
+    setProjects: React.Dispatch<React.SetStateAction<ProjectData[]>>;
 }
 
-export default function ProjectView({project}: ViewProps) {
+export default function ProjectView({project, setProjects}: ViewProps) {
 
     const isAProjectSelected: boolean = project !== undefined;
     return (
         <section className={styles["project-view-container"]}>
         {isAProjectSelected ? 
-            <Project project={project}></Project>
+            <Project setProjects={setProjects} project={project}></Project>
             : 
             <NoProject></NoProject> }
         </section>

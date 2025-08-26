@@ -2,18 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
-.main-container {
-    @include base.flex-center();
-    height: 100vh;
-    background-color: rgb(37, 37, 37);
-
+.global-container {
+    @include base.flex();
+    height: 100%;
     font-family: "Inter", sans-serif;
-}
+    background-color: rgb(46, 46, 46);
 
-.container {
-    display: flex;
-    height: 80%;
-    min-height: 700px;
+    >main {
+        @include base.flex($gap: 2rem);
+        margin: 2rem;
+    }
 }
-
