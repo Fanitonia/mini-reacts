@@ -5,7 +5,7 @@ $color-background: rgb(36, 34, 34);
 $color-text: rgb(250, 250, 250);
 
 .aside-container {
-    width: 33%;
+    width: 30%;
     padding: 3rem 2rem;
     background-color: $color-background;
     color: $color-text;
@@ -27,7 +27,6 @@ $color-text: rgb(250, 250, 250);
         border: none;
         background-color: color.adjust($color-background, $lightness: 10%);
         color: color.adjust($color-text, $lightness: -30%);
-        cursor: pointer;
 
         &:hover {
             background-color: color.adjust($color-background, $lightness: 8%);
@@ -42,7 +41,7 @@ $color-text: rgb(250, 250, 250);
 
 @media (min-width: 768px) {
     .aside-container {
-        width: 18rem;
+        width: 16rem;
         
         >h2 {
             font-size: 1.5rem;

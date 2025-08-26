@@ -1,7 +1,10 @@
 @use "../../../../base.scss";
 
 .project-view-container {
-    background-color: rgb(243, 237, 226);
+    @include base.flex-justify();
+    width: 50rem;
+    padding: 2rem 1rem;
+    background-color: rgb(46, 44, 44);
     border-top-right-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }

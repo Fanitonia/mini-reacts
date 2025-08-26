@@ -1,22 +1,33 @@
 import styles from "./ProjectView.module.scss";
+import type { ProjectsState } from "../../types/ProjectsState"
 import type { ProjectData } from "../../types/ProjectData"
-import NoProject from "./NoProject/NoProject";
-import Project from "./Project/Project"
+import NoProject from "../NoProject/NoProject";
+import Project from "../Project/Project"
+import NewProject from "../NewProject/NewProject";
 
 type ViewProps = {
-    project?: ProjectData;
-    setProjects: React.Dispatch<React.SetStateAction<ProjectData[]>>;
+    onShowCreateProject: () => void,
+    onCreateProject: (projectData: ProjectData) => void,
+    projectsState: ProjectsState
 }
 
-export default function ProjectView({project, setProjects}: ViewProps) {
+export default function ProjectView({onShowCreateProject, onCreateProject, projectsState}: ViewProps) {
 
-    const isAProjectSelected: boolean = project !== undefined;
-    return (
+    console.log(projectsState);
+    
+    let content;
+
+    if(projectsState.selectedProjectId === "noproject") {
+        content = <NoProject onShowCreateProject={onShowCreateProject}></NoProject>;
+    } else if (projectsState.selectedProjectId === "newproject") {
+        content = <NewProject onCreateProject={onCreateProject}></NewProject>;
+    } else {
+        content = <Project project={projectsState.projects.find((p) => p.id === projectsState.selectedProjectId)!}></Project>
+    }
+
+    return ( 
         <section className={styles["project-view-container"]}>
-        {isAProjectSelected ? 
-            <Project setProjects={setProjects} project={project}></Project>
-            : 
-            <NoProject></NoProject> }
+            {content}
         </section>
     )
 }

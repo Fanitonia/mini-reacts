@@ -5,13 +5,13 @@
     margin-top: 2rem;
 
     >menu {
-        @include base.flex-align($gap: 0.6rem);
+        @include base.flex-align($gap: 0.8rem);
         justify-content: flex-end;
-        margin: 0.5rem 0;
+        margin-top: 1.5rem;
+        padding-right: 0.5rem;
         list-style: none;
 
         button {
-            cursor: pointer;
             font-family: "Inter", sans-serif;
             border: none;
         }
