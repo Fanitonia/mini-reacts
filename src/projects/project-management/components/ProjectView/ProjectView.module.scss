@@ -1,0 +1,10 @@
+@use "@styles/mixins.scss" as *;
+
+.project-view-container {
+    @include flex-justify();
+    width: 50rem;
+    padding: 2rem 1rem;
+    background-color: var(--color-bg-light);
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}

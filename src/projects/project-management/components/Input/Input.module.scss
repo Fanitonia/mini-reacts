@@ -1,0 +1,31 @@
+@use "@styles/mixins.scss" as *;
+
+.input-container {
+    @include flex(column, 0.3rem);
+    margin-bottom: 1rem;
+
+    >label {
+        font-size: 0.875rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--color-text);
+    }
+
+    .input-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        border: 1px solid var(--color-border-muted);
+        border-bottom: 1px solid var(--color-highlight);
+        border-radius: 0.25rem;
+        background-color: var(--color-bg-lighter);
+        color: var(--color-text);
+        padding: 0.5rem;
+        color-scheme: dark;
+        
+        &:focus {
+            outline: none;
+            border-color: var(--color-border);
+            border-bottom-color: var(--color-text);
+        }
+    }
+}

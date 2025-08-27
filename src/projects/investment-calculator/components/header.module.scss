@@ -1,0 +1,14 @@
+@use "@styles/mixins.scss" as *;
+
+.header {
+  @include flex-justify();
+  margin-bottom: 3rem;
+  margin-top: min(120px, 15vh);
+
+  >h1 {
+    font-size: 3rem;
+    color: var(--color-text);
+    text-shadow: var(--shadow);
+    text-align: center;
+  }
+}
