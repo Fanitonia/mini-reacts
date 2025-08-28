@@ -1,5 +1,5 @@
-# Investment Calculator
-A simple React project I made while learning the basics.
+# Mini-Reacts
+Collection of small projects i built while learning React.
 
 ### Built With
 
@@ -8,7 +8,6 @@ A simple React project I made while learning the basics.
 - [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
 
 
-  
 ## Installation
 1. Clone the repo
 ```sh
