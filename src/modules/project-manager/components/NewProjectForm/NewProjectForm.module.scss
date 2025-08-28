@@ -1,0 +1,38 @@
+@use "@styles/mixins.scss" as *;
+
+.new-project-container {
+  width: 100%;
+  margin-top: 1rem;
+
+  > menu {
+    @include flex-align($gap: 0.8rem);
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-right: 0.5rem;
+    list-style: none;
+
+    button {
+      font-family: "Inter", sans-serif;
+      border: none;
+    }
+
+    .cancel-button {
+      background-color: transparent;
+      color: var(--color-text-muted);
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+
+    .save-button {
+      background-color: var(--color-bg-lighter);
+      color: var(--color-text);
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border-muted);
+      border-radius: 0.3rem;
+      &:hover {
+        border-color: var(--color-border);
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use "@styles/mixins.scss" as *;
+
+.container {
+    @include flex-center(column, 25px);
+    min-height: 100dvh;
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+
+    header {
+        @include flex-center(column);
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        >p {
+            color: var(--color-text-muted);
+        }
+    }
+
+    hr {
+        width: 300px;
+        border-color: var(--color-bg-light);
+    }
+    
+    .projects-container {
+        @include flex(column, 5px);
+        text-align: center;
+
+        >a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 1.125rem;
+            display: inline-block;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

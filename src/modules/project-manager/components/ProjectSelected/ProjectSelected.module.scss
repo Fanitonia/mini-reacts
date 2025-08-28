@@ -1,0 +1,45 @@
+@use "@styles/mixins.scss" as *;
+
+.project-container {
+  @include flex(column, 1rem);
+  width: 100%;
+  color: var(--color-text);
+
+  > header {
+    @include flex(column);
+    padding-bottom: 1.125rem;
+    border-bottom: 2px solid var(--color-highlight);
+
+    > .title-container {
+      @include flex();
+      justify-content: space-between;
+
+      > h1 {
+        font-size: 1.75rem;
+      }
+
+      > button {
+        background: none;
+        border: none;
+        color: var(--color-text-muted);
+
+        &:hover {
+          color: var(--color-text);
+        }
+      }
+    }
+
+    > .date {
+      color: var(--color-text-muted);
+    }
+
+    > .description {
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+  }
+
+  > .tasks-container {
+    margin-top: 1rem;
+  }
+}
