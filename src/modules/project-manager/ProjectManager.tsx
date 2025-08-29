@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ProjectManager.module.scss";
 import type { ProjectData } from "./types/ProjectData"
 import type { ProjectsState } from "./types/ProjectsState"
+import generateId from "./utils/generateId";
 
 import ProjectsSideBar from "./components/Sidebar/ProjectsSidebar";
 import ProjectView from "./components/ProjectView/ProjectView";
@@ -63,9 +64,51 @@ function ProjectManager() {
     })
   }
 
+  function handleAddTask(task: string) {
+    setProjectsState(prevState => {
+      const taskId = generateId();
+      const newTask = {
+        id: taskId,
+        text: task,
+        isDone: false
+      }
+
+      return {
+        ...prevState,
+        projects: prevState.projects.map(project => {
+          if (project.id === prevState.selectedProjectId) {
+            return {
+              ...project,
+              tasks: [newTask, ...(project.tasks || [])]
+            }
+          }
+          return project;
+        })
+      }
+    })
+  }
+
+  function handleDeleteTask(taskId: string) {
+    setProjectsState(prevState => {
+      return {
+        ...prevState,
+        projects: prevState.projects.map((project) => {
+          if (project.id === prevState.selectedProjectId) {
+            return {
+              ...project,
+              tasks: project.tasks!.filter((task) => (
+                task.id !== taskId
+              ))
+            }
+          }
+          return project;
+        })
+      }
+    })
+  }
+
   return (
     <div className={styles["global-container"]}>
-      <p className={styles["work-in-progress"]}>WORK IN PROGRESS</p>
       <main>
         <ProjectsSideBar
           onShowCreateProject={handleShowCreateProject}
@@ -76,6 +119,8 @@ function ProjectManager() {
           onCreateProject={handleCreateProject}
           onCancelCreateProject={handleCancelCreateProject}
           onDeleteProject={handleDeleteProject}
+          onAddTask={handleAddTask}
+          onDeleteTask={handleDeleteTask}
           projectsState={projectsState} ></ProjectView>
       </main>
     </div>

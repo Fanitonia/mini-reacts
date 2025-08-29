@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styles from "./NewProjectForm.module.scss";
 import type { ProjectData } from "../../types/ProjectData";
+import generateId from "../../utils/generateId";
 
 import Input from "../Input/Input";
 import Modal from "../Modal/Modal";
@@ -31,7 +32,7 @@ export default function NewProject({ onCreateProject, onCancel }: NewProjectProp
         }
 
         const newProject: ProjectData = {
-            id: Math.random().toString(36).substring(2, 9),
+            id: generateId(),
             title: enteredTitle!,
             description: enteredDescription!,
             dueDate: new Date(enteredDueDate!),

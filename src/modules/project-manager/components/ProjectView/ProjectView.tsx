@@ -11,10 +11,12 @@ type ViewProps = {
     onCreateProject: (projectData: ProjectData) => void,
     onCancelCreateProject: () => void,
     onDeleteProject: (projectId: string) => void,
+    onAddTask: (task: string) => void,
+    onDeleteTask: (taskId: string) => void,
     projectsState: ProjectsState
 }
 
-export default function ProjectView({ onShowCreateProject, onCreateProject, onCancelCreateProject, onDeleteProject, projectsState }: ViewProps) {
+export default function ProjectView({ onShowCreateProject, onCreateProject, onCancelCreateProject, onDeleteProject, onAddTask, onDeleteTask, projectsState }: ViewProps) {
     let content;
 
     if (projectsState.selectedProjectId === "noproject") {
@@ -23,7 +25,7 @@ export default function ProjectView({ onShowCreateProject, onCreateProject, onCa
         content = <NewProject onCreateProject={onCreateProject} onCancel={onCancelCreateProject}></NewProject>;
     } else {
         const selectedProject = projectsState.projects.find((p) => p.id === projectsState.selectedProjectId);
-        content = <ProjectSelected project={selectedProject!} onDelete={onDeleteProject}></ProjectSelected>;
+        content = <ProjectSelected project={selectedProject!} onDelete={onDeleteProject} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></ProjectSelected>;
     }
 
     return (
