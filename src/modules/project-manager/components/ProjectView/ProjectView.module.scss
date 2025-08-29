@@ -2,8 +2,8 @@
 
 .project-view-container {
   @include flex-justify();
-  width: 50rem;
-  padding: 2rem;
+  flex-grow: 1;
+  padding: min(2rem, 5%);
   background-color: var(--color-bg-light);
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;

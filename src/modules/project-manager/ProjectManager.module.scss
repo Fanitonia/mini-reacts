@@ -9,7 +9,14 @@
 
   > main {
     @include flex();
+    max-width: 70%;
+    flex: 1 0 auto;
     margin: 2rem;
+
+    @media (max-width: 768px) {
+      margin: 2rem 4%;
+      max-width: 100%;
+    }
   }
 
   button {
