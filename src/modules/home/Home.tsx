@@ -8,7 +8,6 @@ export default function Home() {
                 <h1>Mini React Projects</h1>
                 <p>The mini-projects I made while learning React</p>
             </header>
-            <hr />
             <div className={styles["projects-container"]}>
                 <Link to="/investment-calculator">
                     <p>Investment Calculator</p>
