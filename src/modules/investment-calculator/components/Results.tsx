@@ -9,28 +9,31 @@ export default function Results({ userInput }: { userInput: InputValues }) {
     return (
         <section className={styles.results}>
             {hasResults ?
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Year</th>
-                            <th>Ending Balance</th>
-                            <th>Interest</th>
-                            <th>Total Interest</th>
-                            <th>Total Deposit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {investmentResults.map((result, index) => (
-                            <tr key={index}>
-                                <td>{result.year}</td>
-                                <td>{formatter.format(result.totalValue)}</td>
-                                <td>{formatter.format(result.yearlyInterest)}</td>
-                                <td>{formatter.format(result.totalInterest)}</td>
-                                <td>{formatter.format(result.investedCapital)}</td>
+                <div className={styles["table-wrapper"]}>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Ending Balance</th>
+                                <th>Interest</th>
+                                <th>Total Interest</th>
+                                <th>Total Deposit</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table> :
+                        </thead>
+                        <tbody>
+                            {investmentResults.map((result, index) => (
+                                <tr key={index}>
+                                    <td>{result.year}</td>
+                                    <td>{formatter.format(result.totalValue)}</td>
+                                    <td>{formatter.format(result.yearlyInterest)}</td>
+                                    <td>{formatter.format(result.totalInterest)}</td>
+                                    <td>{formatter.format(result.investedCapital)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                 :
                 <p>Waiting for user input to display results...</p>
             }
         </section>

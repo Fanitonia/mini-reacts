@@ -4,7 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: min(3rem, 10vw);
+  padding: min(3rem, 8vw);
   margin: 0 5vw;
 
   background: var(--color-bg);
@@ -12,10 +12,19 @@
   border-radius: 15px;
   box-shadow: var(--shadow);
 
+  @media (max-width: 695px) {
+      width: min-content;
+      gap: 1rem;
+  }
+
   >div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 2rem;
+
+    @media (max-width: 678px) {
+      gap: 1rem;
+    }
   }
 }
