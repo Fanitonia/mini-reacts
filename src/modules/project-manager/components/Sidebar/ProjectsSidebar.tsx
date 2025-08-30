@@ -1,7 +1,7 @@
 import styles from "./ProjectsSidebar.module.scss";
 import type { ProjectData } from "../../types/ProjectData";
 import type { ProjectsState } from "../../types/ProjectsState";
-
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 type SideBarProps = {
     onShowCreateProject: () => void,
@@ -10,12 +10,13 @@ type SideBarProps = {
 }
 
 export default function ProjectsSideBar({ onShowCreateProject, onSelectProject, projectsState }: SideBarProps) {
-
+    
     function isProjectSelected(project: ProjectData) {
         return project.id === projectsState.selectedProjectId ? styles.active : "";
     }
 
     return (
+        <>
         <aside className={styles["aside-container"]}>
             <h2>Your Projects</h2>
             <button onClick={onShowCreateProject}>Create Project</button>
@@ -27,5 +28,11 @@ export default function ProjectsSideBar({ onShowCreateProject, onSelectProject, 
                 ))}
             </ul>
         </aside>
+        <MobileMenu 
+            projectsState={projectsState} 
+            onSelect={onSelectProject}
+            onShowCreateProject={onShowCreateProject}
+        />
+        </>
     )
 }

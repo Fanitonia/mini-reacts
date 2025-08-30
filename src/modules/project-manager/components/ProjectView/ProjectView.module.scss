@@ -2,9 +2,14 @@
 
 .project-view-container {
   @include flex-justify();
-  flex-grow: 1;
-  padding: min(2rem, 5%);
   background-color: var(--color-bg-light);
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
+  padding: 1.5rem;
+  flex: 4;
+
+  @media (max-width: 767px) {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
 }

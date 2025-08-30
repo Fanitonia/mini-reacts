@@ -1,13 +1,16 @@
 @use "@styles/mixins.scss" as *;
 
 .aside-container {
-  width: 30%;
-  min-width: min-content;
-  padding: 3rem 1rem;
   background-color: var(--color-bg);
   color: var(--color-text);
   border-top-left-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
+  padding: 3rem 1rem;
+  flex: 1;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 
   > h2 {
     margin-bottom: 1rem;
@@ -59,17 +62,4 @@
   }
 }
 
-@media (min-width: 768px) {
-  .aside-container {
-    width: 16rem;
-    padding: 3rem 2rem;
 
-    > h2 {
-      font-size: 1.25rem;
-    }
-
-    > button {
-      font-size: 0.9rem;
-    }
-  }
-}

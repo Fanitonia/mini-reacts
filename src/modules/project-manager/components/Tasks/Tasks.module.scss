@@ -5,6 +5,7 @@
 
     >h2 {
         margin-bottom: 0.5rem;
+        font-size: clamp(1.25rem, 0.488rem + 3.81vw, 1.5rem);
     }
 
     >.add-task-container {
@@ -17,6 +18,7 @@
             border: 1px solid transparent;
             border-radius: 0.5rem;
             padding: 0.25rem 0.375rem;
+            font-size: clamp(0.875rem, 0.494rem + 1.905vw, 1rem);
 
             &:focus {
                 outline: none;
@@ -34,6 +36,7 @@
             border-radius: 0.5rem;
             color: var(--color-text-muted);
             padding: 0 0.5rem;
+            font-size: clamp(0.875rem, 0.494rem + 1.905vw, 1rem);
 
             &:hover {
                 color: var(--color-text);
@@ -54,10 +57,11 @@
             >span {
                 flex-grow: 1;
                 margin-right: 0.5rem;
+                font-size: clamp(0.875rem, 0.494rem + 1.905vw, 1rem);
             }
 
             >button {
-                font-size: 0.875rem;
+                font-size: clamp(0.75rem, 0.369rem + 1.905vw, 0.875rem);
                 color: var(--color-text-muted);
                 height: min-content;
                 background-color: transparent;
