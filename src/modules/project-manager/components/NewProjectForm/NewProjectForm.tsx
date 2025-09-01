@@ -1,17 +1,14 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { ProjectsContext } from "../../contexts/projects-context";
 import styles from "./NewProjectForm.module.scss";
 import type { ProjectData } from "../../types/ProjectData";
 import generateId from "../../utils/generateId";
-
 import Input from "../Input/Input";
 import Modal from "../Modal/Modal";
 
-type NewProjectProps = {
-    onCreateProject: (projectData: ProjectData) => void;
-    onCancel: () => void;
-};
+export default function NewProject() {
+    const {createProject, cancelCreateProject} = useContext(ProjectsContext);
 
-export default function NewProject({ onCreateProject, onCancel }: NewProjectProps) {
     const errorDialog = useRef<HTMLDialogElement | null>(null);
 
     const title = useRef<HTMLInputElement | null>(null);
@@ -39,7 +36,7 @@ export default function NewProject({ onCreateProject, onCancel }: NewProjectProp
             tasks: [],
         };
 
-        onCreateProject(newProject);
+        createProject(newProject);
     }
 
     return (
@@ -57,7 +54,7 @@ export default function NewProject({ onCreateProject, onCancel }: NewProjectProp
                 </div>
                 <menu>
                     <li>
-                        <button className={styles["cancel-button"]} onClick={onCancel}>Cancel</button>
+                        <button className={styles["cancel-button"]} onClick={cancelCreateProject}>Cancel</button>
                     </li>
                     <li>
                         <button className={styles["save-button"]} onClick={handleSave}>

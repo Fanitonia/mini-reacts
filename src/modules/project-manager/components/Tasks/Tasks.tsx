@@ -1,14 +1,15 @@
+import { useContext } from "react";
+import { ProjectsContext } from "../../contexts/projects-context"
 import { useState } from "react";
 import styles from "./Tasks.module.scss";
 import type { Task } from "../../types/ProjectData"
 
 type TasksProps = {
-    onAdd: (task: string) => void
-    onDelete: (taskId: string) => void
     tasks?: Task[];
 }
 
-export default function Tasks({ onAdd, onDelete, tasks = [] }: TasksProps) {
+export default function Tasks({ tasks = [] }: TasksProps) {
+    const {selectedProjectId, addTask, deleteTask} = useContext(ProjectsContext);
     const [enteredTask, setEnteredTask] = useState("");
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -18,7 +19,7 @@ export default function Tasks({ onAdd, onDelete, tasks = [] }: TasksProps) {
     function handleAddClick() {
         setEnteredTask("");
         if (enteredTask.trim() !== "") {
-            onAdd(enteredTask);
+            addTask(selectedProjectId, enteredTask);
         }
     }
 
@@ -33,7 +34,7 @@ export default function Tasks({ onAdd, onDelete, tasks = [] }: TasksProps) {
                 {tasks.map(task => (
                     <li key={task.id}>
                         <span>{task.text}</span>
-                        <button onClick={() => onDelete(task.id)}>Clear</button>
+                        <button onClick={() => deleteTask(selectedProjectId, task.id)}>Clear</button>
                     </li>
                 ))}
             </ol>

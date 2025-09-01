@@ -1,16 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ProjectsContext } from "../../contexts/projects-context"
 import styles from "./MobileMenu.module.scss";
-import type { ProjectsState } from "../../types/ProjectsState";
 import menu from "../../assets/menu.svg";
 import menuOpen from "../../assets/menu-open.svg";
 
-type MobileMenuProps = {
-    projectsState: ProjectsState,
-    onSelect: (id: string) => void
-    onShowCreateProject: () => void
-}
 
-export default function MobileMenu({ projectsState, onSelect, onShowCreateProject }: MobileMenuProps) {
+export default function MobileMenu() {
+    const {selectProject, showCreateProject, projects} = useContext(ProjectsContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuIcon = isMenuOpen ? menuOpen : menu;
 
@@ -19,12 +15,12 @@ export default function MobileMenu({ projectsState, onSelect, onShowCreateProjec
     }
 
     function onSelectProject(id: string)  {
-        onSelect(id);
+        selectProject(id);
         toggleMenu();
     }
 
     function onCreateProject() {
-        onShowCreateProject();
+        showCreateProject();
         toggleMenu();
     }
 
@@ -34,7 +30,7 @@ export default function MobileMenu({ projectsState, onSelect, onShowCreateProjec
 
             {isMenuOpen &&
                 <div className={styles["open-menu"]}>
-                    {projectsState.projects.map((project, index) => (
+                    {projects.map((project, index) => (
                         <li key={index}>
                             <button onClick={() => onSelectProject(project.id)} >{project.title}</button>
                         </li>

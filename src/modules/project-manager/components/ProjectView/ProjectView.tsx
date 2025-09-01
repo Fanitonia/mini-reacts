@@ -1,31 +1,21 @@
+import { useContext } from "react";
+import { ProjectsContext } from "../../contexts/projects-context"
 import styles from "./ProjectView.module.scss";
-import type { ProjectsState } from "../../types/ProjectsState"
-import type { ProjectData } from "../../types/ProjectData"
-
 import NoProjectSelected from "../NoProjectSelected/NoProjectSelected";
 import ProjectSelected from "../ProjectSelected/ProjectSelected"
 import NewProject from "../NewProjectForm/NewProjectForm";
 
-type ViewProps = {
-    onShowCreateProject: () => void,
-    onCreateProject: (projectData: ProjectData) => void,
-    onCancelCreateProject: () => void,
-    onDeleteProject: (projectId: string) => void,
-    onAddTask: (task: string) => void,
-    onDeleteTask: (taskId: string) => void,
-    projectsState: ProjectsState
-}
-
-export default function ProjectView({ onShowCreateProject, onCreateProject, onCancelCreateProject, onDeleteProject, onAddTask, onDeleteTask, projectsState }: ViewProps) {
+export default function ProjectView() {
+    const {selectedProjectId, projects} = useContext(ProjectsContext);
     let content;
 
-    if (projectsState.selectedProjectId === "noproject") {
-        content = <NoProjectSelected onShowCreateProject={onShowCreateProject}></NoProjectSelected>;
-    } else if (projectsState.selectedProjectId === "newproject") {
-        content = <NewProject onCreateProject={onCreateProject} onCancel={onCancelCreateProject}></NewProject>;
+    if (selectedProjectId === "noproject") {
+        content = <NoProjectSelected></NoProjectSelected>;
+    } else if (selectedProjectId === "newproject") {
+        content = <NewProject></NewProject>;
     } else {
-        const selectedProject = projectsState.projects.find((p) => p.id === projectsState.selectedProjectId);
-        content = <ProjectSelected project={selectedProject!} onDelete={onDeleteProject} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></ProjectSelected>;
+        const selectedProject = projects.find((p) => p.id === selectedProjectId);
+        content = <ProjectSelected project={selectedProject!}></ProjectSelected>;
     }
 
     return (

@@ -1,38 +1,30 @@
+import { useContext } from "react";
+import { ProjectsContext } from "../../contexts/projects-context"
 import styles from "./ProjectsSidebar.module.scss";
 import type { ProjectData } from "../../types/ProjectData";
-import type { ProjectsState } from "../../types/ProjectsState";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-type SideBarProps = {
-    onShowCreateProject: () => void,
-    onSelectProject: (projectId: string) => void,
-    projectsState: ProjectsState
-}
+export default function ProjectsSideBar() {
+    const { selectedProjectId, projects, showCreateProject, selectProject} = useContext(ProjectsContext)
 
-export default function ProjectsSideBar({ onShowCreateProject, onSelectProject, projectsState }: SideBarProps) {
-    
     function isProjectSelected(project: ProjectData) {
-        return project.id === projectsState.selectedProjectId ? styles.active : "";
+        return project.id === selectedProjectId ? styles.active : "";
     }
 
     return (
         <>
-        <aside className={styles["aside-container"]}>
-            <h2>Your Projects</h2>
-            <button onClick={onShowCreateProject}>Create Project</button>
-            <ul>
-                {projectsState.projects.map((project, index) => (
-                    <li key={index}>
-                        <button className={isProjectSelected(project)} onClick={() => onSelectProject(project.id)} >{project.title}</button>
-                    </li>
-                ))}
-            </ul>
-        </aside>
-        <MobileMenu 
-            projectsState={projectsState} 
-            onSelect={onSelectProject}
-            onShowCreateProject={onShowCreateProject}
-        />
+            <aside className={styles["aside-container"]}>
+                <h2>Your Projects</h2>
+                <button onClick={showCreateProject}>Create Project</button>
+                <ul>
+                    {projects.map((project, index) => (
+                        <li key={index}>
+                            <button className={isProjectSelected(project)} onClick={() => selectProject(project.id)} >{project.title}</button>
+                        </li>
+                    ))}
+                </ul>
+            </aside>
+            <MobileMenu/>
         </>
     )
 }
