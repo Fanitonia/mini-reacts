@@ -1,4 +1,4 @@
-import styles from "./Input.module.scss"
+import styles from "./input.module.css"
 import type { ComponentPropsWithRef } from "react";
 
 type InputProps = {

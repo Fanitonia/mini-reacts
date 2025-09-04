@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ProjectsContext } from "../../contexts/projects-context"
-import styles from "./NoProjectSelected.module.scss";
+import styles from "./no-project-selected.module.css";
 import noteLogo from "../../assets/note.png";
 
 export default function NoProjectSelected() {

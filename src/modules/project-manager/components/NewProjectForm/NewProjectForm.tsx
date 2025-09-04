@@ -1,13 +1,13 @@
 import { useRef, useContext } from "react";
 import { ProjectsContext } from "../../contexts/projects-context";
-import styles from "./NewProjectForm.module.scss";
+import styles from "./new-project-form.module.css";
 import type { ProjectData } from "../../types/ProjectData";
 import generateId from "../../utils/generateId";
 import Input from "../Input/Input";
 import Modal from "../Modal/Modal";
 
 export default function NewProject() {
-    const {createProject, cancelCreateProject} = useContext(ProjectsContext);
+    const { createProject, cancelCreateProject } = useContext(ProjectsContext);
 
     const errorDialog = useRef<HTMLDialogElement | null>(null);
 

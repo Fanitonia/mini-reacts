@@ -1,4 +1,4 @@
-import styles from "./results.module.scss"
+import styles from "./results.module.css"
 import type { InputValues } from "../types/InputValues";
 import calculateInvestment, { formatter } from "../utils/investmentCalculator";
 
@@ -33,7 +33,7 @@ export default function Results({ userInput }: { userInput: InputValues }) {
                         </tbody>
                     </table>
                 </div>
-                 :
+                :
                 <p>Waiting for user input to display results...</p>
             }
         </section>

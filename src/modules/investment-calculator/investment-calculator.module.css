@@ -1,11 +1,12 @@
-@use "@styles/mixins.scss" as *;
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .container {
   --bg-gradient: linear-gradient(180deg, hsl(240, 3%, 6%, 0.7), hsl(240, 3%, 6%, 0.96), hsl(240, 3%, 6%));
 
-  @include flex-align(column);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   position: relative;
   font-family: 'Inter', sans-serif;
   color: var(--color-text);

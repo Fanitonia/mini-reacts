@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { ProjectsContext } from "../../contexts/projects-context"
 import type { ProjectData } from "../../types/ProjectData"
-import styles from "./ProjectSelected.module.scss";
+import styles from "./project-selected.module.css";
 import Tasks from "../Tasks/Tasks";
 
-export default function ProjectSelected({project}: {project: ProjectData}) {
-    const {deleteProject} = useContext(ProjectsContext);
+export default function ProjectSelected({ project }: { project: ProjectData }) {
+    const { deleteProject } = useContext(ProjectsContext);
 
     const formattedDate = project.dueDate.toLocaleDateString("en-US", {
         year: "numeric",

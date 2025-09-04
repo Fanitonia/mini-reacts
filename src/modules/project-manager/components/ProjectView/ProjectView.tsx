@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { ProjectsContext } from "../../contexts/projects-context"
-import styles from "./ProjectView.module.scss";
+import styles from "./project-view.module.css";
 import NoProjectSelected from "../NoProjectSelected/NoProjectSelected";
 import ProjectSelected from "../ProjectSelected/ProjectSelected"
 import NewProject from "../NewProjectForm/NewProjectForm";
 
 export default function ProjectView() {
-    const {selectedProjectId, projects} = useContext(ProjectsContext);
+    const { selectedProjectId, projects } = useContext(ProjectsContext);
     let content;
 
     if (selectedProjectId === "noproject") {

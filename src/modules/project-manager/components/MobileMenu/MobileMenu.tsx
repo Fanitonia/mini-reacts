@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { ProjectsContext } from "../../contexts/projects-context"
-import styles from "./MobileMenu.module.scss";
+import styles from "./mobile-menu.module.css";
 import menu from "../../assets/menu.svg";
 import menuOpen from "../../assets/menu-open.svg";
 
 
 export default function MobileMenu() {
-    const {selectProject, showCreateProject, projects} = useContext(ProjectsContext);
+    const { selectProject, showCreateProject, projects } = useContext(ProjectsContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuIcon = isMenuOpen ? menuOpen : menu;
 
@@ -14,7 +14,7 @@ export default function MobileMenu() {
         setIsMenuOpen(prevState => (!prevState))
     }
 
-    function onSelectProject(id: string)  {
+    function onSelectProject(id: string) {
         selectProject(id);
         toggleMenu();
     }

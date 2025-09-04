@@ -4,6 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  
   padding: min(3rem, 8vw);
   margin: 0 5vw;
 

@@ -1,14 +1,16 @@
-@use "@styles/mixins.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 .global-container {
-  @include flex-justify(); 
+  display: flex;
+  justify-content: center;
+
   min-height: 100dvh;
   background-color: var(--color-bg-dark);
   font-family: "Inter", sans-serif;
 
-  > main {
-    @include flex();
+  >main {
+    display: flex;
+
     position: relative;
     flex: 1;
     max-width: 60rem;

@@ -1,7 +1,8 @@
-@use "@styles/mixins.scss" as *;
-
 .input-container {
-  @include flex(column, 0.3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
   margin-bottom: 1rem;
 
   >label {

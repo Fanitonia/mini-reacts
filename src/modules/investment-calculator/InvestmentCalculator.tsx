@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "./InvestmentCalculator.module.scss"
+import styles from "./investment-calculator.module.css"
 import type { InputValues } from "./types/InputValues"
 
 import Header from "./components/Header"

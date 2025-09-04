@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  height: 100dvh;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  padding: 1rem;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-highlight);
+
+    h1 {
+      font-size: clamp(2rem, 0.857rem + 5.714vw, 3rem);
+    }
+
+    >p {
+      font-size: clamp(0.75rem, 0.179rem + 2.857vw, 1.25rem);
+      color: var(--color-text-muted);
+    }
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+
+    >a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: clamp(1rem, 0.857rem + 0.714vw, 1.125rem);
+      display: inline-block;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

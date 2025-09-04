@@ -1,4 +1,4 @@
-import styles from "./input.module.scss"
+import styles from "./input.module.css"
 
 type InputProps = {
     label: string;
@@ -7,14 +7,14 @@ type InputProps = {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({label, id, spanValue, onChange}: InputProps) {
+export default function Input({ label, id, spanValue, onChange }: InputProps) {
     return (
         <div className={styles["input-container"]}>
             <label htmlFor={id}>{label}</label>
             <div>
-                <input className={styles.input} type="number" id={id} defaultValue={0} onChange={onChange}/>
+                <input className={styles.input} type="number" id={id} defaultValue={0} onChange={onChange} />
                 <span>{spanValue}</span>
             </div>
         </div>
     );
- }
+}

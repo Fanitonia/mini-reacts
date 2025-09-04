@@ -1,5 +1,3 @@
-@use "@styles/mixins.scss" as *;
-
 .noproject-container {
   width: 66%;
   color: var(--color-text);

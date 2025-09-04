@@ -3,7 +3,7 @@ import type { ProjectsState } from "../types/ProjectsState"
 import type { ProjectData } from "../types/ProjectData"
 import generateId from "../utils/generateId";
 
-type ProjectsContextType = {
+type ContextStructure = {
     projects: ProjectData[],
     selectedProjectId: string,
     selectProject: (id: string) => void,
@@ -15,7 +15,7 @@ type ProjectsContextType = {
     deleteTask: (projectId: string, taskId: string) => void,
 }
 
-export const ProjectsContext = createContext<ProjectsContextType>({
+export const ProjectsContext = createContext<ContextStructure>({
     projects: [],
     selectedProjectId: "noproject",
     selectProject: () => { },
@@ -128,7 +128,7 @@ export default function ProjectsProvider({ children }: { children: React.ReactNo
         dispatch({ type: "DELETE_TASK", payload: { projectId, taskId } })
     }
 
-    const ProjectContext: ProjectsContextType = {
+    const contextValues: ContextStructure = {
         projects: state.projects,
         selectedProjectId: state.selectedProjectId,
         selectProject: selectProject,
@@ -141,7 +141,7 @@ export default function ProjectsProvider({ children }: { children: React.ReactNo
     }
 
     return (
-        <ProjectsContext value={ProjectContext}>
+        <ProjectsContext value={contextValues}>
             {children}
         </ProjectsContext>
     )

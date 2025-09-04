@@ -1,4 +1,4 @@
-import styles from "./inputs.module.scss"
+import styles from "./inputs.module.css"
 import type { InputValues } from "../types/InputValues";
 import Input from "./Input";
 

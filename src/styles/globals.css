@@ -3,24 +3,20 @@
   --color-bg: hsl(240, 4%, 10%);
   --color-bg-light: hsl(240, 4%, 14%);
   --color-bg-lighter: hsl(240, 4%, 18%);
-
   --color-text: hsl(0, 0%, 90%);
   --color-text-muted: hsl(0, 0%, 70%);
-
   --color-border: hsl(0, 0%, 35%);
   --color-border-muted: hsl(0, 0%, 20%);
   --color-highlight: hsl(0, 0%, 60%);
-
   --color-primary: hsl(42 35% 45%);
   --color-secondary: hsl(0, 60%, 60%);
-
   --shadow: 0px 5px 8px hsl(0, 0%, 0%, 0.1), 0px 3px 3px hsla(0, 0%, 0%, 0.1);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 * {
@@ -28,26 +24,29 @@
   margin: 0;
 }
 
-html, body {
+body {
+  line-height: 1.5;
   min-height: 100dvh;
-  height: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
   min-height: 100dvh;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-}
-
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -55,7 +54,12 @@ p {
   text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 

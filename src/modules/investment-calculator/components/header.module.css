@@ -1,5 +1,3 @@
-@use "@styles/mixins.scss" as *;
-
 .header {
   margin-bottom: 3rem;
   margin-top: 6rem;

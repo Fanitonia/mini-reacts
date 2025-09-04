@@ -1,4 +1,4 @@
-import styles from "./ProjectManager.module.scss";
+import styles from "./ProjectManager.module.css";
 import ProjectsProvider from "./contexts/projects-context";
 import ProjectsSideBar from "./components/Sidebar/ProjectsSidebar";
 import ProjectView from "./components/ProjectView/ProjectView";
