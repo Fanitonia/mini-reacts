@@ -33,7 +33,7 @@ export default function Tasks({ tasks = [] }: TasksProps) {
             <ol className={styles["tasks-list"]}>
                 {tasks.map(task => (
                     <li key={task.id}>
-                        <span>{task.text}</span>
+                        <p>{task.text}</p>
                         <button onClick={() => deleteTask(selectedProjectId, task.id)}>Clear</button>
                     </li>
                 ))}
