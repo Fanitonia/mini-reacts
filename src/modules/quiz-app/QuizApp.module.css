@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.app-wrapper {
+    --color-bg-dark: hsl(216, 18%, 16%);
+    --color-bg: hsl(217, 10%, 25%);
+    --color-bg-light: hsl(217, 10%, 30%);
+    --color-text: hsl(0, 0%, 93%);
+    --color-text-muted: hsl(0, 0%, 80%);
+    --color-border: hsl(217, 15%, 35%);
+    --color-border-muted: hsl(217, 15%, 25%);
+    --color-primary: hsl(183, 100%, 35%);
+    --color-secondary: hsl(0, 0%, 93%);
+    --shadow: 0px 5px 8px hsl(0, 0%, 0%, 0.1), 0px 3px 3px hsla(0, 0%, 0%, 0.1);
+
+    font-family: "Inter", sans-serif;
+    color: var(--color-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background-color: var(--color-bg-dark);
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-bg);
+
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+
+    padding: 8px;
+}

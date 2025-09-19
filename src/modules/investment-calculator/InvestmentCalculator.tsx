@@ -19,7 +19,7 @@ function InvestmentCalculator() {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles["app-wrapper"]}>
         <Background></Background>
         <Header></Header>
         <Inputs setInputValues={setUserInput} />

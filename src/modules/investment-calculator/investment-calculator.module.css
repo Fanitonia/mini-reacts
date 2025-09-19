@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.container {
+.app-wrapper {
+  --color-bg-dark: hsl(240, 4%, 6%);
+  --color-bg: hsl(240, 4%, 10%);
+  --color-bg-light: hsl(240, 4%, 14%);
+  --color-bg-lighter: hsl(240, 4%, 18%);
+  --color-text: hsl(0, 0%, 90%);
+  --color-border: hsl(0, 0%, 35%);
+  --color-highlight: hsl(0, 0%, 60%);
+  --shadow: 0px 5px 8px hsl(0, 0%, 0%, 0.1), 0px 3px 3px hsla(0, 0%, 0%, 0.1);
   --bg-gradient: linear-gradient(180deg, hsl(240, 3%, 6%, 0.7), hsl(240, 3%, 6%, 0.96), hsl(240, 3%, 6%));
 
   display: flex;

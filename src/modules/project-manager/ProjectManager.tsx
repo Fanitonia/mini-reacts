@@ -6,7 +6,7 @@ import ProjectView from "./components/ProjectView/ProjectView";
 function ProjectManager() {
   return (
     <ProjectsProvider>
-      <div className={styles["global-container"]}>
+      <div id="project-manager-wrapper" className={styles["app-wrapper"]}>
         <main>
           <ProjectsSideBar></ProjectsSideBar>
           <ProjectView></ProjectView>

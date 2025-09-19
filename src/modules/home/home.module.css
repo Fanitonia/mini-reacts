@@ -1,4 +1,9 @@
-.container {
+.app-wrapper {
+  --color-bg: hsl(240, 4%, 6%);
+  --color-text: hsl(0, 0%, 90%);
+  --color-text-muted: hsl(0, 0%, 70%);
+  --color-highlight: hsl(0, 0%, 60%);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +12,7 @@
 
   height: 100dvh;
   font-family: "Inter", sans-serif;
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-bg);
   color: var(--color-text);
   padding: 1rem;
 
@@ -31,7 +36,7 @@
     }
   }
 
-  .projects-container {
+  .projects {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;

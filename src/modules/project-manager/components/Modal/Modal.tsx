@@ -18,6 +18,6 @@ export default function Modal({ ref, buttonCaption, title, description }: ModalP
                 <button>{buttonCaption}</button>
             </form>
         </dialog>,
-        document.getElementById("root") as HTMLElement
+        document.getElementById("project-manager-wrapper") as HTMLElement
     )
 }
