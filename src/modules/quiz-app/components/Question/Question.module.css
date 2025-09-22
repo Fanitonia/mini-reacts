@@ -1,0 +1,44 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    >.title {
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    >progress {
+        width: 100%;
+    }
+
+    >.answers {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+        >button {
+            flex: 1;
+            color: var(--text-muted);
+            background-color: var(--background);
+            border: 2px solid var(--border-muted);
+            border-radius: 6px;
+            text-align: start;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                border-color: var(--border);
+                color: var(--text);
+                background-color: var(--background-dark);
+            }
+
+            >span {
+                font-weight: 700;
+            }
+        }
+    }
+}

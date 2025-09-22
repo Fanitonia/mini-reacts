@@ -1,3 +1,47 @@
-menu-container {
-    
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+    >header {
+        margin-bottom: 1rem;
+        >p {
+            color: var(--text-muted);
+        }
+    }
+
+    >.options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.325rem;
+        background-color: var(--background);
+        color: var(--text-muted);
+        border-radius: 6px;
+        padding: 0.8rem 1rem;
+
+        >select {
+            background: var(--background-light);
+            border: none;
+            border-radius: 5px;
+            color: var(--text-muted);
+        }
+    }
+
+    >button {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color: var(--primary);
+        color: var(--text-dark);
+        margin-top: 1rem;
+        padding: 0.325rem 1rem;
+        transition: 0.1s border ease-in;
+        font-weight: 600;
+
+        &:hover {
+            border: 1px solid var(--border);
+        }
+    }
 }

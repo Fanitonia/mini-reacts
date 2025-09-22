@@ -1,26 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 .app-wrapper {
-    --color-bg-dark: hsl(216, 18%, 16%);
-    --color-bg: hsl(217, 10%, 25%);
-    --color-bg-light: hsl(217, 10%, 30%);
-    --color-text: hsl(0, 0%, 93%);
-    --color-text-muted: hsl(0, 0%, 80%);
-    --color-border: hsl(217, 15%, 35%);
-    --color-border-muted: hsl(217, 15%, 25%);
-    --color-primary: hsl(183, 100%, 35%);
-    --color-secondary: hsl(0, 0%, 93%);
+    --background-dark: hsl(120, 5%, 6%);
+    --background: hsl(120, 5%, 8%);
+    --background-light: hsl(120, 5%, 10%);
+    --text: hsl(0, 0%, 90%);
+    --text-muted: hsl(0, 0%, 80%);
+    --text-dark: hsl(0, 0%, 10%);
+    --border: hsl(0, 0%, 35%);
+    --border-muted: hsl(0, 0%, 20%);
+    --primary: hsl(34, 50%, 50%);
+    --secondary: hsl(0, 0%, 93%);
     --shadow: 0px 5px 8px hsl(0, 0%, 0%, 0.1), 0px 3px 3px hsla(0, 0%, 0%, 0.1);
 
     font-family: "Inter", sans-serif;
-    color: var(--color-text);
+    color: var(--text);
 
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 
-    background-color: var(--color-bg-dark);
+    background-color: var(--background-dark);
 }
 
 .content-wrapper {
@@ -28,10 +29,6 @@
     justify-content: center;
     align-items: center;
 
-    background-color: var(--color-bg);
-
-    border: 2px solid var(--color-border);
     border-radius: 6px;
-
-    padding: 8px;
+    margin: 0 min(1rem, 5%);
 }
