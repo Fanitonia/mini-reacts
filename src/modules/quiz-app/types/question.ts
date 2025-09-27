@@ -1,7 +1,8 @@
 type Question = {
     text: string,
     answers: [a: string, b: string, c: string, d: string],
-    rightAnswer: "a" | "b" | "c" | "d"
+    rightAnswer: 0 | 1 | 2 | 3
+
 };
 
 export type { Question };
