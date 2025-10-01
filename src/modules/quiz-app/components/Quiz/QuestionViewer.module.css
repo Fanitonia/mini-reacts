@@ -13,6 +13,24 @@
 
     >progress {
         width: 100%;
+        appearance: none;
+    }
+
+    >progress::-webkit-progress-bar {
+        height: 10px;
+        background-color: var(--border-muted);
+        border-radius: 6px;
+    }
+
+    >progress::-webkit-progress-value {
+        height: 10px;
+        background-color: var(--primary);
+        border-radius: 6px;
+    }
+    
+    >progress::-moz-progress-bar {
+        background-color: var(--primary);
+        border-radius: 6px;
     }
 
     >.answers {

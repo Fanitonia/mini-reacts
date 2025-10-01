@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./Quiz.module.css";
 import type { Question } from "../../types/question";
 import type { Result } from "../../types/result";
 import QuestionViewer from "./QuestionViewer";
@@ -26,16 +27,19 @@ export default function Quiz({ questions, secondsPerQuestion }: QuizProps) {
         });
     }
     return (
-        <>
+        <div className={styles.quiz}>
             {endQuiz ?
                 <Results results={results}></Results>
                 :
-                <QuestionViewer
-                    question={questions[selectedQuestion]}
-                    time={secondsPerQuestion}
-                    onQuestionEnd={onQuestionEnd}>
-                </QuestionViewer>
+                <>
+                    <QuestionViewer
+                        question={questions[selectedQuestion]}
+                        time={secondsPerQuestion}
+                        onQuestionEnd={onQuestionEnd}>
+                    </QuestionViewer>
+                    <p>{selectedQuestion + 1} out of {questions.length}</p>
+                </>
             }
-        </>
+        </div>
     )
 }

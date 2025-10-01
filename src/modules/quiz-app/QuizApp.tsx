@@ -1,26 +1,26 @@
+import { useRef, useState } from "react";
 import styles from "./QuizApp.module.css";
-import type { Question } from "./types/question";
 import MainMenu from "./components/MainMenu";
 import { Quiz } from "./components/Quiz";
 
-const exampleQuestios: Question[] = [
-    {
-        text: "What is the largest Spanish-speaking city in the world?",
-        answers: ["Mexico City", "Bercelona", "Istanbul", "Madrid"],
-        rightAnswer: 0
-    },
-    {
-        text: "How many elements are in the periodic table?",
-        answers: ["110", "118", "90", "121"],
-        rightAnswer: 1
-    }
-]
+import questions from "./data/questions.ts";
 
 export default function QuizApp() {
+    const [isGameStarted, setGameStarted] = useState(false);
+    const option = useRef<HTMLSelectElement>(null);
+
+    function startGame() {
+        setGameStarted(true);
+    }
+
     return (
         <div className={styles["app-wrapper"]}>
             <main className={styles["content-wrapper"]}>
-                <Quiz questions={exampleQuestios} secondsPerQuestion={10}></Quiz>
+                {isGameStarted ?
+                    <Quiz questions={questions} secondsPerQuestion={parseInt(option.current!.value)}></Quiz>
+                    :
+                    <MainMenu startGame={startGame} option={option}></MainMenu>
+                }
             </main>
         </div>
     )
