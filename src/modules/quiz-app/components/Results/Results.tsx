@@ -4,12 +4,12 @@ import type { Result } from "../../types/result";
 type ResultsProps = {
     results: Result[]
 }
+
 export default function Results({ results }: ResultsProps) {
 
     const questionCount = results.length;
     const answeredCorretly = results.filter(result => result.isAnsweredCorrectly).length;
     const skipped = results.filter(result => result.selectedAnswer === null).length;
-
     const score = (answeredCorretly / questionCount) * 100;
 
     return (
