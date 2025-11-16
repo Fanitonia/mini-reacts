@@ -20,16 +20,17 @@ export default function Quiz({ questions, secondsPerQuestion }: QuizProps) {
         setSelectedQuestion(prev => {
             if (questions.length != prev + 1)
                 return prev + 1;
-            else
+            else {
                 setEndQuiz(true)
-            return prev;
+                return prev;
+            }
         });
     }
 
     return (
         <div className={styles.quiz}>
             {endQuiz ?
-                <Results results={results.current}></Results>
+                <Results results={results.current} questions={questions}></Results>
                 :
                 <>
                     <QuestionViewer
