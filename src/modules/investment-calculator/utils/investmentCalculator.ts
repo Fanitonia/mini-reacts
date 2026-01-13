@@ -7,6 +7,8 @@ export default function calculateInvestment(inputs: InputValues): InvestmentData
 
     if (!allInputsProvided)
         return [];
+    if(inputs.duration > 100)
+        inputs.duration = 100;
 
     let annualDatas: InvestmentData[] = [];
 
