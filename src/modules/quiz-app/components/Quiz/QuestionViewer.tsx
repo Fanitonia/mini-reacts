@@ -46,7 +46,7 @@ export default function QuestionViewer({ question, time, onQuestionEnd }: Questi
     return (
         <div className={styles["question"]}>
             <p className={styles["title"]}>{question.text}</p>
-            <progress max={time * 1000} value={remainingTime}></progress>
+            <hr />
             <div className={styles["answers"]}>
                 {question.answers.map((answer, index) => (
                     <button
@@ -63,6 +63,7 @@ export default function QuestionViewer({ question, time, onQuestionEnd }: Questi
                     </button>
                 ))}
             </div>
+            <progress max={time * 1000} value={remainingTime}></progress>
         </div>
     )
 }

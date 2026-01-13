@@ -3,7 +3,7 @@
   color: var(--color-text);
   border-top-left-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   flex: 1;
 
   @media (max-width: 767px) {
