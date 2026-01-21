@@ -1,9 +1,9 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./modules/home/Home";
-import InvestmentCalculator from "./modules/investment-calculator/InvestmentCalculator";
-import ProjectManager from "./modules/project-manager/ProjectManager";
-import QuizApp from "./modules/quiz-app/QuizApp";
+import Home from "./pages/home/Home";
+import InvestmentCalculator from "./pages/investment-calculator/InvestmentCalculator";
+import ProjectManager from "./pages/project-manager/ProjectManager";
+import QuizApp from "./pages/quiz-app/QuizApp";
 
 export default function App() {
     return (
